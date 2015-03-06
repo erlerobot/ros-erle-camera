@@ -18,3 +18,9 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS} )
 add_executable(usb_cam src/camera_opencv.cpp)
 target_link_libraries(usb_cam ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(usb_cam beginner_camera)
+
+install(
+	TARGETS usb_cam
+	ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+	LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+	RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
